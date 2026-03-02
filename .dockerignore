@@ -1,0 +1,19 @@
+# Git and env
+.git
+.env
+.env.*
+!.env.example
+
+# Frontend (not needed for backend image)
+frontend/
+
+# Python
+backend/venv/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Misc
+node_modules
+*.md
+.DS_Store
