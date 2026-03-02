@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" shape-rendering="crispEdges">
+  <!-- Outline shape  sharp top-left, rounded other corners -->
+  <path d="M 2,1 H 28 V 3 H 30 V 5 H 32 V 31 H 30 V 33 H 4 V 31 H 2 Z" fill="#111"/>
+  <!-- Body fill  slate purple-grey -->
+  <path d="M 3,2 H 27 V 4 H 29 V 6 H 31 V 30 H 29 V 32 H 5 V 30 H 3 Z" fill="#7a7a90"/>
+  <!-- Left edge highlight -->
+  <rect x="3" y="2" width="2" height="28" fill="#8888a0"/>
+  <!-- Right edge shadow -->
+  <rect x="29" y="7" width="2" height="23" fill="#5c5c72"/>
+  <!-- Bottom edge shadow -->
+  <rect x="5" y="30" width="24" height="2" fill="#5c5c72"/>
+  <!-- Metal slider recess at top -->
+  <rect x="7" y="3" width="18" height="10" fill="#3a3a50"/>
+  <!-- Metal slider body -->
+  <rect x="9" y="4" width="14" height="8" fill="#a0a0b0"/>
+  <!-- Slider highlight -->
+  <rect x="9" y="4" width="14" height="4" fill="#b8b8c8"/>
+  <!-- Slider window -->
+  <rect x="19" y="5" width="4" height="5" fill="#2a2a3a"/>
+  <rect x="19" y="5" width="4" height="2" fill="#3a3a4a"/>
+  <!-- Label border -->
+  <rect x="5" y="14" width="22" height="16" fill="#1a1a1a"/>
+  <!-- Label fill -->
+  <rect x="6" y="15" width="20" height="14" fill="#e8e4dc"/>
+  <!-- Label lines -->
+  <rect x="7" y="19" width="18" height="1" fill="#1a1a1a"/>
+  <rect x="7" y="22" width="18" height="1" fill="#1a1a1a"/>
+  <rect x="7" y="25" width="18" height="1" fill="#1a1a1a"/>
+  <!-- Red bottom strip -->
+  <rect x="6" y="27" width="20" height="2" fill="#994040"/>
+  <!-- Corner rivets -->
+  <rect x="4" y="29" width="2" height="2" fill="#c0c0c0"/>
+  <rect x="26" y="29" width="2" height="2" fill="#c0c0c0"/>
+</svg>

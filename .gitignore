@@ -1,0 +1,5 @@
+### Environment files (API keys, secrets)
+.env
+.env.*
+!.env.example
+

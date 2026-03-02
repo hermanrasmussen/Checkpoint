@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-pixel: "Press Start 2P", monospace;
+
+  --color-brand-400: #b0b0b0;
+  --color-brand-500: #888888;
+  --color-brand-600: #666666;
+
+  --color-neon-green: #39ff14;
+  --color-neon-pink: #ff6ec7;
+  --color-neon-blue: #00d4ff;
+  --color-achievement-orange: #f59e0b;
+
+  --color-surface: #1a1a1a;
+  --color-surface-raised: #222222;
+  --color-surface-hover: #2a2a2a;
+  --color-border: #2a2a2a;
+  --color-border-light: #3a3a3a;
+}
+
+html {
+  background: #181818;
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #181818;
+}
+
+/* Scale down UI on mobile for better fit */
+@media (max-width: 639px) {
+  html {
+    font-size: 14px;
+  }
+  /* Prevent iOS zoom on input focus */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+::selection {
+  background: rgba(160, 160, 160, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Page title – matches CHECKPOINT logo style */
+.page-title {
+  font-family: var(--font-pixel);
+  color: rgb(209 213 219); /* gray-300 */
+  letter-spacing: 0.06em;
+  word-spacing: -0.25em;
+  text-shadow: 1px 0 0 currentColor, 0 1px 0 currentColor, 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
