@@ -35,8 +35,8 @@ _frontend_url = os.environ.get("FRONTEND_URL", "").strip()
 if _frontend_url:
     origins.append(_frontend_url.rstrip("/"))
 
-# Allow LAN IPs (192.168.x.x, 10.x.x.x) for mobile testing on same network
-allow_origin_regex = r"http://(192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+):\d+"
+# Allow LAN IPs and Vercel deployments (any *.vercel.app)
+allow_origin_regex = r"https://[\w-]+\.vercel\.app|http://(192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+):\d+"
 
 app.add_middleware(
     CORSMiddleware,
