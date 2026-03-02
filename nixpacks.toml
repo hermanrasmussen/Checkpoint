@@ -1,3 +1,6 @@
+# Force Python so pip is available (repo root has frontend + backend)
+providers = ["python"]
+
 [phases.install]
 cmds = ["pip install -r backend/requirements.txt"]
 
