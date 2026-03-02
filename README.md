@@ -2,16 +2,30 @@
 
 A personal game library tracker inspired by Letterboxd. Search games, add them to your library, track play status, and rate them. Clean, modern UI with retro gaming touches.
 
+## Live Demo
+
+> TODO: Add your deployed URL here (for example: `https://checkpoint-frontend-gold.vercel.app/`).
+
+## Features
+
+- **Game discovery**: Search the RAWG catalog and view rich game detail pages.
+- **Personal library**: Add games to your library, track status (backlog/playing/finished), and set ratings.
+- **Collections**: Group games into custom collections with cover art.
+- **Activity feed**: Optionally share updates to a social-style feed.
+- **Profile stats**: See play stats and library breakdowns on your profile.
+- **Steam integration**: Connect Steam to import games and achievements (where supported).
+- **Responsive UI**: Pixel-inspired layout that works well on laptop/desktop screens.
+
 ## Tech Stack
 
-| Layer    | Technology                |
-| -------- | ------------------------- |
+| Layer    | Technology                               |
+| -------- | ---------------------------------------- |
 | Frontend | React + TypeScript + Tailwind CSS (Vite) |
-| Backend  | FastAPI (Python)          |
-| Database | PostgreSQL via Supabase   |
-| Auth     | Supabase Auth             |
-| Game API | RAWG                      |
-| Artwork  | SteamGridDB               |
+| Backend  | FastAPI (Python)                         |
+| Database | PostgreSQL via Supabase                  |
+| Auth     | Supabase Auth                            |
+| Game API | RAWG                                     |
+| Artwork  | SteamGridDB                              |
 
 ## Project Structure
 
@@ -36,7 +50,7 @@ Checkpoint/
       pages/        # Route pages
 ```
 
-## Setup
+## Local Setup
 
 ### 1. Supabase
 
@@ -102,6 +116,10 @@ npm run dev
 ```
 
 The Vite dev server proxies `/api` requests to `localhost:8000`.
+
+## Deployment
+
+See `DEPLOYMENT.md` for step‑by‑step instructions for deploying the backend (Railway/Render) and frontend (Vercel/Netlify), plus the required Supabase configuration.
 
 ## API Routes
 
