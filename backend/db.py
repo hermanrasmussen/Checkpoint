@@ -16,11 +16,16 @@ def _get_engine() -> AsyncEngine:
     if _engine is None:
         if not settings.database_url:
             raise RuntimeError("DATABASE_URL is not configured.")
-        # Disable asyncpg's prepared-statement cache so it works with Supabase's pgbouncer
+        # Disable asyncpg's statement caches so it works with Supabase's PgBouncer
         _engine = create_async_engine(
             settings.database_url,
             pool_pre_ping=True,
-            connect_args={"statement_cache_size": 0},
+            connect_args={
+                # For asyncpg < 0.28
+                "statement_cache_size": 0,
+                # For asyncpg >= 0.28
+                "prepared_statement_cache_size": 0,
+            },
         )
     return _engine
 
