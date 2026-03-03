@@ -49,18 +49,22 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#181818] px-4">
       <div className="w-full max-w-sm space-y-10">
-        <div className="text-center">
-          <div className="flex items-center justify-center gap-3 mb-3">
-            <PixelFloppyDisk className="h-14 w-14" />
+        <div className="flex justify-center mb-4">
+          <PixelFloppyDisk className="h-14 w-14" />
+          <div className="ml-3">
             <h1
               className="font-pixel text-2xl text-gray-300 tracking-[0.2em]"
               style={{ textShadow: '2px 0 0 currentColor, 0 2px 0 currentColor, 2px 2px 0 rgba(0,0,0,0.5)' }}
-            >CHECKPOINT</h1>
+            >
+              CHECKPOINT
+            </h1>
+            <p
+              className="mt-2 font-pixel text-[8px] uppercase tracking-[0.15em] text-gray-500"
+              style={{ textShadow: '1px 0 0 currentColor, 0 1px 0 currentColor, 1px 1px 0 rgba(0,0,0,0.4)' }}
+            >
+              Track your game library
+            </p>
           </div>
-          <p
-            className="font-pixel text-[8px] uppercase tracking-[0.15em] text-gray-500"
-            style={{ textShadow: '1px 0 0 currentColor, 0 1px 0 currentColor, 1px 1px 0 rgba(0,0,0,0.4)' }}
-          >Track your game library</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
