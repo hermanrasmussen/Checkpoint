@@ -19,6 +19,20 @@ export default function LoginPage() {
     setError(null);
     setLoading(true);
 
+    if (isSignUp) {
+      const trimmed = displayName.trim();
+      if (!trimmed) {
+        setLoading(false);
+        setError('Display name is required when creating an account.');
+        return;
+      }
+      if (trimmed.length < 2 || trimmed.length > 30) {
+        setLoading(false);
+        setError('Display name must be between 2 and 30 characters.');
+        return;
+      }
+    }
+
     const { error: authError } = isSignUp
       ? await supabase.auth.signUp({ email, password })
       : await supabase.auth.signInWithPassword({ email, password });
@@ -29,16 +43,14 @@ export default function LoginPage() {
       return;
     }
 
-    if (isSignUp && displayName.trim()) {
+    if (isSignUp) {
       const trimmed = displayName.trim();
-      if (trimmed.length >= 2 && trimmed.length <= 30) {
-        try {
-          await api.patch('/profile/me', { username: trimmed });
-        } catch (err) {
-          setLoading(false);
-          setError(err instanceof Error ? err.message : 'Failed to set display name');
-          return;
-        }
+      try {
+        await api.patch('/profile/me', { username: trimmed });
+      } catch (err) {
+        setLoading(false);
+        setError(err instanceof Error ? err.message : 'Failed to set display name');
+        return;
       }
     }
 
@@ -95,8 +107,9 @@ export default function LoginPage() {
                 onChange={(e) => setDisplayName(e.target.value)}
                 minLength={2}
                 maxLength={30}
+                required
                 className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-gray-100 placeholder-gray-600 outline-none transition focus:border-white/30 focus:bg-white/[0.07]"
-                placeholder="How others will see you (optional)"
+                placeholder="How others will see you"
               />
             </div>
           )}
@@ -116,6 +129,13 @@ export default function LoginPage() {
               placeholder="••••••••"
             />
           </div>
+
+          {isSignUp && (
+            <p className="text-[11px] text-gray-500">
+              After creating your account, you&apos;ll receive an email from Supabase to confirm your address
+              before you can sign in.
+            </p>
+          )}
 
           {error && (
             <p className="text-sm text-red-400">{error}</p>
